@@ -73,9 +73,11 @@ const TicTacToe = () => {
 
   const hasWinCondition = (nextBoardData) =>
     WIN_CONDITIONS.reduce((winner, winCondition) => {
+      console.log('nextBoardData', nextBoardData);
       if (!winner) {
         const potentialWinCondition = winCondition.map(position => nextBoardData[position]);
 
+        console.log('potentialWinCondition', potentialWinCondition);
         // If every game position has the curr game piece it's a win.
         if (potentialWinCondition.every(conditionPosition => conditionPosition === currGamePiece)) {
           return currGamePiece;
@@ -87,6 +89,7 @@ const TicTacToe = () => {
     }, false);
 
   const gameBoardClicked = (index) => {
+    console.log('index', index);
     if(!winner) {
       const dataIndex = parseInt(index);
 

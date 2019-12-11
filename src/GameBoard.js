@@ -17,7 +17,7 @@ const GameBoard = ({ boardData, onGameBoardClicked, onResetGameData, currGamePie
       {
         boardData.map((piece, idx) =>
           <BoardPosition
-            onClick={() => onGameBoardClicked(idx)}
+            onClick={() => piece === '' && onGameBoardClicked(idx)}
             key={idx}
             active={piece === currGamePiece}>
             {piece}
